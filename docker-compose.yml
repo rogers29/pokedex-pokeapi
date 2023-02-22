@@ -1,0 +1,13 @@
+version: "3"
+services:
+  pokedex:
+    container_name: pokedex
+    build:
+      context: "./"
+      dockerfile: "Dockerfile.pokedex"
+    volumes:
+      - "./:/app"
+    command: npm run dev
+    restart: unless-stopped
+    ports:
+      - "3333:3333"
