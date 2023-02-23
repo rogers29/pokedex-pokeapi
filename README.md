@@ -24,4 +24,4 @@ Projeto Estudo PokeAPI
 
  ### Curl para buscar comentários - via Postman
 ```curl --location --request GET 'http://localhost:3333/pokedex/vaporeon'```
- - Obs.: Onde "vaporeon" é o nome do pokemons desejado. 
+ - Obs.: "vaporeon" é o nome do pokemom desejado. 
