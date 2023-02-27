@@ -10,7 +10,11 @@ export default class PokemonsController {
 
       return response.ok({ pokemonData })
     } catch (error) {
-      return response.status(404).send({error: error.message, code: error.code, status: error.response.status})
+      console.log('ERRORRRRRR')
+      console.log(error)
+      return response.status(404).send({error: error.message,
+        code: error.code,
+        status: error.response.status})
     }
   }
 }

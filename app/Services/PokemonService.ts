@@ -1,5 +1,5 @@
-
 import axios from 'axios'
+import Redis from '@ioc:Adonis/Addons/Redis'
 
 const BASE_URL = 'https://pokeapi.co/api/v2/'
 
@@ -39,6 +39,14 @@ export default class PokemonService {
   }
 
   public async getPokemonChainEvolution (url) {
+    const cacheKey = await this.getEvolutionsCacheKey (url)
+
+    const cachedData = await Redis.get(cacheKey)
+
+    if (cachedData) {
+      return JSON.parse(cachedData)
+    }
+
     const evolutionChains = await axios.get(`${url}`)
 
     const validateEvolution = evolutionChains.data.chain.evolves_to.length
@@ -55,6 +63,7 @@ export default class PokemonService {
       for (let i = 0; i < evolutionChains.data.chain.evolves_to.length; i++) {
         listEvolves.push(`${firstNivel} -> ${evolutionChains.data.chain.evolves_to[i].species.name}`)
       }
+      await Redis.set(cacheKey, JSON.stringify(listEvolves.join(', ')))
       return listEvolves.join(', ')
     }
 
@@ -71,6 +80,8 @@ export default class PokemonService {
       }
     }
 
+    await Redis.set(cacheKey, JSON.stringify(listEvolves.join(' -> ')))
+
     return listEvolves.join(' -> ')
   }
 
@@ -81,5 +92,9 @@ export default class PokemonService {
       listTypes.push(types[i].type.name)
     }
     return listTypes.join(', ')
+  }
+
+  public async getEvolutionsCacheKey (urlEvolution) {
+    return `pokemon.evolutions.${urlEvolution.toLowerCase()}`
   }
 }
