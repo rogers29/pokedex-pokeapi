@@ -2,9 +2,13 @@
 Projeto Estudo PokeAPI
 
 ### Tecnologias presente neste projeto
-  - Node
+  - NodeJS
   - AdonisJS
   - Japa
+  - Redis
+  - Redis Commander
+  - Docker
+  - Docker-compose
 
 ### Instalação
 
@@ -20,7 +24,8 @@ Projeto Estudo PokeAPI
  - Caso tudo ok só acessar o navegador pelo link: http://localhost:3333.
 
 ### Comandos úteis
- - `npm test` - Executa testes unitários atraves do JAPA
+ - `npm test` - Executa testes unitários atraves do JAPA;
+ - Para acessar o Redis Commander utilize a porta **8081** [localhost:8081](http://localhost:8081).
 
  ### Curl para buscar comentários - via Postman
 ```curl --location --request GET 'http://localhost:3333/pokedex/vaporeon'```
