@@ -31,7 +31,7 @@ Projeto Estudo PokeAPI
 ```curl --location --request GET 'http://localhost:3333/pokedex/vaporeon'```
  - Obs.: "vaporeon" é o nome do pokemom desejado. 
 
-### Links uteis
+### Links úteis
  - https://docs.docker.com/
  - https://adonisjs.com/
  - https://redis.io/docs/
