@@ -27,6 +27,6 @@ Projeto Estudo PokeAPI
  - `npm test` - Executa testes unitários atraves do JAPA;
  - Para acessar o Redis Commander utilize a porta **8081** [localhost:8081](http://localhost:8081).
 
- ### Curl para buscar comentários - via Postman
+ ### Curl para buscar o Pokemon (nome ou id) - via Postman
 ```curl --location --request GET 'http://localhost:3333/pokedex/vaporeon'```
  - Obs.: "vaporeon" é o nome do pokemom desejado. 
