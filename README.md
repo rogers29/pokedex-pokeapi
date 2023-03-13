@@ -21,12 +21,17 @@ Projeto Estudo PokeAPI
  - Efetue a instalação do docker e docker-compose (link abaixo);
  - Execute o comando `sudo docker-compose up -d`;
  - Verifique se a aplicação está rodando corretamente com o comando `sudo docker ps -a`;
- - Caso tudo ok só acessar o navegador pelo link: http://localhost:3333.
+ - Caso tudo ok basta acessar via browser pelo link: http://localhost:3333.
 
 ### Comandos úteis
  - `npm test` - Executa testes unitários atraves do JAPA;
  - Para acessar o Redis Commander utilize a porta **8081** [localhost:8081](http://localhost:8081).
 
- ### Curl para buscar o Pokemon (nome ou id) - via Postman
+### Curl para buscar o Pokemon (nome ou id) - via Postman
 ```curl --location --request GET 'http://localhost:3333/pokedex/vaporeon'```
  - Obs.: "vaporeon" é o nome do pokemom desejado. 
+
+### Links uteis
+ - https://docs.docker.com/
+ - https://adonisjs.com/
+ - https://redis.io/docs/
